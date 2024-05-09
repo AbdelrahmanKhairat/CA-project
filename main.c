@@ -140,6 +140,13 @@ void readAndParse(){
     fclose(filePointer);
 }
 
+int instructionFetch(){
+    int instructionAdd = GPRS[65];
+    GPRS[65] += 1;
+    int instruction = memInstructions[instructionAdd];
+    printf("inst:%d,next inst:%d ",instruction,memInstructions[GPRS[65]]);
+    return instruction;
+}
 
 int main() {
     
